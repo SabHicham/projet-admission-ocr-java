@@ -14,8 +14,6 @@ public class BibliothequeApplication {
 
 		// Tester lq connexion avec JPA
 		LivreRepository livreRepository = context.getBean(LivreRepository.class);
-
-
 		System.out.println(livreRepository.findAll().get(0).getTitre());
 
 
