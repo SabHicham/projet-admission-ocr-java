@@ -1,11 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Modification Livre</title>
 </head>
 <body>
 <h1>Modification Livre</h1>
+
+
+
+    <form action="#" method="post"
+          th:object="${livre}"
+          th:action="@{/edit-livre/{id}(id=${id})}">
+
+        <div>
+            <input type="text" th:field="*{titre}" placeholder="Titre">
+        </div>
+
+        <div>
+            <input type="text" th:field="*{auteur}" placeholder="Auteur">
+        </div>
+
+        <div>
+            <input type="text" th:field="*{genre}" placeholder="Genre">
+        </div>
+
+        <div>
+            <input type="date" th:field="*{date_de_parution}" pattern="yyyy-MM-dd" placeholder="date de parution">
+        </div>
+
+        <div>
+            <input type="text" th:field="*{edition}" placeholder="edition">
+        </div>
+
+        <div>
+            <a href="/mes-livres">Cancel</a>
+            <button type="submit">Valider</button>
+        </div>
+    </form>
 
 </body>
 </html>

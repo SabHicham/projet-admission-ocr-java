@@ -25,14 +25,14 @@ public class Livre {
     @NotNull
     String genre;
 
-    Date date_de_parution;
+    String date_de_parution;
 
     String edition;
 
     public Livre() {
     }
 
-    public Livre(String titre, String auteur, String genre, Date date_de_parution, String edition) {
+    public Livre(String titre, String auteur, String genre, String date_de_parution, String edition) {
         this.titre = titre;
         this.auteur = auteur;
         this.genre = genre;
@@ -72,12 +72,12 @@ public class Livre {
         this.genre = genre;
     }
 
-    public Date getDateDeParution() {
+    public String getDate_de_parution() {
         return date_de_parution;
     }
 
-    public void setDateDeParution(java.util.Date dateDeParution) {
-        this.date_de_parution = dateDeParution;
+    public void setDate_de_parution(String date_de_parution) {
+        this.date_de_parution = date_de_parution;
     }
 
     public String getEdition() {

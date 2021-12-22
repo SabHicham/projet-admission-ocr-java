@@ -2,13 +2,24 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <head>
+    <link rel="stylesheet" href="./static/css/style.css">
     <meta charset="UTF-8">
     <title>Mes Livres</title>
 </head>
 <body>
 <h1>Mes Livres</h1>
+<style>
+      table, td, th {
+      padding: 10px;
+      border: 2px solid #1c87c9;
+      border-radius: 5px;
+      background-color: #e5e5e5;
+      text-align: center;
+      }
+    </style>
 
 <div>
+    <a href="/ajout-livre">Ajouter un nouveau livre</a>
     <table>
         <thead>
             <tr>
@@ -16,6 +27,8 @@
                 <th>Titre</th>
                 <th>Auteur</th>
                 <th>Genre</th>
+                <th>Date de parution</th>
+                <th>Edition</th>
             </tr>
         </thead>
         <tbody>
@@ -24,6 +37,10 @@
                 <td th:text="${livre.titre}"></td>
                 <td th:text="${livre.auteur}"></td>
                 <td th:text="${livre.genre}"></td>
+                <td th:text="${livre.date_de_parution}"></td>
+                <td th:text="${livre.edition}"></td>
+                <td><a th:href="@{/delete-livre/{id}(id=${livre.id})}">Supprimer</a></td>
+                <td><a th:href="@{/edit-livre/{id}(id=${livre.id})}">Editer</a></td>
             </tr>
         </tbody>
     </table>
